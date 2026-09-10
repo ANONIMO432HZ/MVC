@@ -24,7 +24,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle arrow-none" href="#" id="nav-periodos" role="button"
                         data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        <i class="fa fa-cog"></i> Gestión de Admisión<div class="arrow-down"></div>
+                        <i class="fa fa-cog"></i> Gestión de Tienda<div class="arrow-down"></div>
                     </a>
                     <div class="dropdown-menu" aria-labelledby="nav-periodos">
                         <a href="<?= BASE_URL ?>/admin/usuarios" class="dropdown-item">Usuarios</a>

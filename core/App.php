@@ -15,7 +15,7 @@ class App
 
         // =================================================================
         $segments = $this->parseUrl();   // ej: ['tienda','productos','edit',5]
-        
+
         if (!empty($segments[0]) && strtolower($segments[0]) === 'logout') {
             $this->module     = 'Auth';
             $this->controller = 'LoginController';
@@ -120,7 +120,7 @@ class App
                 require_once $ctrlFile;
                 array_shift($segments);
             } else {
-                return $this->render404("Controlador no encontrado");
+                return $this->render404("Controlador {$ctrlFile} no encontrado");
             }
         } else {
             // controlador por defecto dentro del módulo

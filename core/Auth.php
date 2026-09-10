@@ -15,7 +15,7 @@ class Auth
         self::start();
         $_SESSION['session_id']   = $user['id_session'];
         $_SESSION['user_id']   = $user['id'];
-        $_SESSION['user_name'] = $user['nombre'].' '.$user['apellidos'];
+        $_SESSION['user_name'] = $user['nombre'] . ' ' . $user['apellidos'];
         $_SESSION['token'] = $user['token'];
         $_SESSION['rol_actual'] = $user['rol_id'];
         // Regenerar ID para evitar session fixation
@@ -68,7 +68,7 @@ class Auth
             $stmt->execute([$session_id, $user_id]);
             $sesion = $stmt->fetch();
 
-            $tiempoSession = 4 * 60;
+            $tiempoSession = 120 * 60;
 
             if (!$sesion) {
                 self::logout(); // sesión expirada o cerrada desde admin
@@ -102,7 +102,7 @@ class Auth
         if (!isset($_SESSION['rol_actual'])) {
             return false;
         }
-        
+
         if (empty($roles)) return true; // Cualquier rol
         return in_array($_SESSION['rol_actual'], (array)$roles);
     }
