@@ -13,3 +13,7 @@ public/images/*.docx
 public/images/*.docx
 
 public/uploads/*
+
+# WAMP Setup artifacts
+scripts/*.log
+scripts/backups/
