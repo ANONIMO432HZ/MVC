@@ -1,6 +1,6 @@
 # SIGI MVC
 
-Sistema de Gestión Institucional con arquitectura MVC en PHP.
+Tienda Virtual con arquitectura MVC en PHP.
 
 ## Requisitos
 - PHP 7.4+

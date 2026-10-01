@@ -1,16 +1,18 @@
 <?php
+
 namespace App\Models\Admin;
 
 use Core\Model;
 use PDO;
 
-class Categorias extends Model{
+class Categorias extends Model
+{
     protected $table = 'categorias';
 
-    public function guardar($data){
-        if(!empty($data['id'])){
-
-        }else{
+    public function guardar($data)
+    {
+        if (!empty($data['id'])) {
+        } else {
             $sql = "INSERT INTO {$this->table} (nombre, descripcion) VALUES (:nombre, :descripcion)";
             $params = [
                 ':nombre' => $data['nombre'],
@@ -22,7 +24,8 @@ class Categorias extends Model{
     }
 
 
-    public function obtenerCategorias($start, $length, $orderColumnIndex, $orderDir, $filters){
+    public function obtenerCategorias($start, $length, $orderColumnIndex, $orderDir, $filters)
+    {
         $columns = ['id', 'nombre', 'descripcion', 'activo'];
         $orderColumn = $columns[$orderColumnIndex] ?? 'nombre';
         $where = [];
