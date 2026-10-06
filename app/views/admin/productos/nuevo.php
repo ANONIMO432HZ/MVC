@@ -7,9 +7,9 @@
                 <label for="categoria_id">Categoria</label>
                 <select class="form-control" name="categoria_id" required maxlength="11">
                     <option value="">Seleccionar</option>
-                    @foreach ($categorias as $categoria)
-                    <option value="{{ $categoria->id }}">{{ $categoria->nombre }}</option>
-                    @endforeach
+                    <?php foreach ($categorias as $categoria): ?>
+                        <option value="<?= $categoria['id'] ?>"><?= htmlspecialchars($categoria['nombre']) ?></option>
+                    <?php endforeach; ?>
                 </select>
             </div>
             <div class="col-md-4 form-group">
